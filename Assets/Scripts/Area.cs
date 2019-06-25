@@ -9,17 +9,16 @@ public class Area
     public const int Max_Size = 20;
 
     public List<Vector3> sides = new List<Vector3>();
-    public Vector3 pos;
+    public Point pt;
 
-    public Area(Vector3 pos)
+    public Area(Point p)
     {
-        this.pos = pos;
-        Debug.Log("area pos : " + pos);
+        pt = p;
     }
 
     public override string ToString()
     {
-        return string.Format("Area pos : " + pos.ToString());
+        return string.Format("Area pos : " + pt.pos.ToString());
     }
 
     public void Draw()
@@ -30,7 +29,7 @@ public class Area
         //Vector3 from = r.GetPoint(10); Vector3 to = r.GetPoint(-10);
         ////Gizmos.DrawRay(r);
         //Gizmos.DrawLine(from, to);
-        Gizmos.DrawSphere(pos, 0.05f);
+        Gizmos.DrawSphere(pt.pos, 0.05f);
     }
 
     public Vector3 GetMidperpendicular(Vector3 pos)
